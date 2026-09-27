@@ -1,0 +1,7 @@
+model,variable,mean,median,total,n
+sol,patch_bytes,3134,2069,188065,60
+luna,patch_bytes,1955,1366,117288,60
+sol,lines_added,26.1,15.5,1569,60
+luna,lines_added,12.5,8.5,748,60
+sol,lines_deleted,4.9,2.0,295,60
+luna,lines_deleted,2.6,1.0,159,60

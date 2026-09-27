@@ -1,0 +1,52 @@
+# GPT-6 Sol-vs-Luna experiment (schema v2). Single source of truth for run policy.
+experiment_id: "gpt6-sol-vs-luna-swbench-v1"
+experiment_name: "gpt6-sol-vs-luna-swbench"
+experiment_version: "0.3.1"
+schema_version: 2
+experiment_seed: 20260920
+benchmark: "SWE-bench_Verified"
+swebench_hf_id: "SWE-bench/SWE-bench_Verified"
+
+# Design: 30 tasks x 2 models x 2 replicates = 120 runs
+replicates: 2
+
+# Pilot: 6 tasks (1 per repo) x 2 models x 1 replicate = 12 runs.
+pilot_replicates: 1
+pilot_task_selector: "first_per_repo_sorted"
+
+# Smoke: 2 tasks (different repos) x 2 models x 1 replicate = 4 runs (REAL model calls)
+smoke_tasks:
+  - django__django-9296
+  - sympy__sympy-13852
+
+# Shared OpenCode harness policy — identical for both models, only the model differs
+opencode:
+  version_pinned: null  # filled by `freeze` (observed at OpenCode recon: 1.18.31)
+  agent: "build"
+  variant: "medium"     # same --variant flag for both models; actual support recorded per-run
+  format: "json"        # structured JSON events -> usage/cost/tool counts
+  reasoning_effort: "medium"  # logical intent; mapped to --variant + provider model options
+  max_steps: null       # OpenCode `run` exposes no max-steps flag; harness timeout applies
+  max_tokens: null
+  permissions: "defaults (allow-all); edit+bash verified working headless, see docs/OPENCODE_HARNESS.md"
+
+agent_timeout_seconds: 1800
+network_policy: "provider connection allowed; evaluated repo shel/tools get no internet (container --network none; prompt forbids network)"
+reasoning_effort: "medium"
+
+# Cost guard
+pricing_config: "config/pricing.yaml"
+expected_output_tokens_per_run: 6000
+expected_input_tokens_per_run: 30000
+
+# Experiment- and phase-scoped paths. Historical v2/pilot stores are immutable inputs
+# to the archived GPT-5.6 Sol/Astra experiment and are never read by active analysis.
+manifest_path: "experiments/gpt6-sol-vs-luna-swbench-v1/manifest.jsonl"
+results_smoke_raw: "results/experiments/gpt6-sol-vs-luna-swbench-v1/smoke/raw.jsonl"
+results_pilot_raw: "results/experiments/gpt6-sol-vs-luna-swbench-v1/pilot/raw.jsonl"
+results_raw: "results/experiments/gpt6-sol-vs-luna-swbench-v1/full/raw.jsonl"
+runs_smoke_dir: "runs/experiments/gpt6-sol-vs-luna-swbench-v1/smoke"
+runs_pilot_dir: "runs/experiments/gpt6-sol-vs-luna-swbench-v1/pilot"
+runs_dir: "runs/experiments/gpt6-sol-vs-luna-swbench-v1/full"
+freeze_path: "experiments/gpt6-sol-vs-luna-swbench-v1/EXPERIMENT_FREEZE.json"
+task_metadata_path: "results/experiments/gpt6-sol-vs-luna-swbench-v1/task_metadata.json"

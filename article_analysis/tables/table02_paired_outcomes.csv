@@ -1,0 +1,6 @@
+category,complete_replicate_pairs,note
+both solved,21,
+only Sol,11,
+only Luna,2,
+neither,21,
+total complete,55,of 60 pairs; 5 excluded by frozen dropna rule (NONE on at least one side)

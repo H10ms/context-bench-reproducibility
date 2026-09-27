@@ -1,0 +1,2 @@
+# Preserve exact release bytes, including frozen CRLF files, on every OS.
+* -text

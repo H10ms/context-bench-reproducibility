@@ -1,0 +1,12 @@
+statistic,value,method_or_note
+paired_effect_luna_minus_sol_pp,-13.79,task-level max-rate difference
+paired_diff_ci_95_pp,"[-31.03, 0.0]",task-bootstrap B=2000 seed=20260920 over TASK ids
+task_rate_sol,0.621,n_tasks=29 tasks with both models veredicted
+task_rate_luna,0.483,n_tasks=29
+task_rate_ci_sol,"[0.448, 0.793]",task-bootstrap
+task_rate_ci_luna,"[0.310, 0.655]",task-bootstrap
+discordant_sol_only_pairs,11,complete replicate pairs
+discordant_luna_only_pairs,2,complete replicate pairs
+mcnemar_exact_two_sided_p,0.0225,"binomial n=13 discordant, k=min=2, H0 p=0.5 (frozen-designated exact test)"
+mcnemar_exact_one_sided_p,0.0112,same; direction Sol>Luna
+complete_replicate_pairs,55,of 60; unit = task x repetition

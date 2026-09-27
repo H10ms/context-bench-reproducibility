@@ -1,0 +1,38 @@
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+auth.json
+# Python / editors / caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.cache/
+.codex/
+.agents/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+build/
+dist/
+node_modules/
+# Experiment runtime; only the reviewed public raw is tracked
+runs/
+logs/
+archive/
+worktrees/
+analysis/cases/
+reproduced/
+results/**/processed/
+results/**/figures/
+results/**/smoke/
+results/**/pilot/
+results/**/task_metadata.json

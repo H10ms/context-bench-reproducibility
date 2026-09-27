@@ -1,0 +1,110 @@
+{
+  "experiment_name": "gpt6-sol-vs-luna-swbench",
+  "experiment_version": "0.3.1",
+  "schema_version": 2,
+  "seed": 20260920,
+  "harness_git_sha": "6d7298fc2f777a4af23f09c3778940339821125e",
+  "harness_dirty_at_freeze": false,
+  "opencode_version": "1.18.31",
+  "swebench_version": "5.0.2",
+  "tasks": [
+    "django__django-9296",
+    "django__django-7530",
+    "django__django-16631",
+    "django__django-13212",
+    "django__django-11138",
+    "matplotlib__matplotlib-13989",
+    "matplotlib__matplotlib-25479",
+    "matplotlib__matplotlib-22719",
+    "matplotlib__matplotlib-25287",
+    "matplotlib__matplotlib-24177",
+    "scikit-learn__scikit-learn-9288",
+    "scikit-learn__scikit-learn-25102",
+    "scikit-learn__scikit-learn-14141",
+    "scikit-learn__scikit-learn-25973",
+    "scikit-learn__scikit-learn-25232",
+    "sympy__sympy-13852",
+    "sympy__sympy-16597",
+    "sympy__sympy-12489",
+    "sympy__sympy-14248",
+    "sympy__sympy-13878",
+    "pydata__xarray-4075",
+    "pydata__xarray-2905",
+    "pydata__xarray-3993",
+    "pydata__xarray-6992",
+    "pydata__xarray-4094",
+    "sphinx-doc__sphinx-10323",
+    "sphinx-doc__sphinx-10466",
+    "sphinx-doc__sphinx-11510",
+    "sphinx-doc__sphinx-7590",
+    "sphinx-doc__sphinx-10435"
+  ],
+  "manifest_hash": "636d9b7042c5a02f24eba7540d428893303d0e4590ee78f3c0723f8ddf490acd",
+  "manifest_runs": 120,
+  "models": [
+    {
+      "logical_name": "sol",
+      "display_name": "GPT-6 Sol",
+      "family": "GPT-6 Sol",
+      "opencode_model_id": "openai/gpt-6-sol",
+      "provider": "openai",
+      "reasoning_effort": "medium",
+      "reasoning_mapping": "--variant medium (+ provider model options reasoningEffort=medium where supported)",
+      "usage_support": "tokens+reasoning+cost via `opencode run --format json` step_finish events",
+      "status": "available via OpenAI provider authenticated through ChatGPT Plus"
+    },
+    {
+      "logical_name": "luna",
+      "display_name": "GPT-6 Luna",
+      "family": "GPT-6 Luna",
+      "opencode_model_id": "openai/gpt-6-luna",
+      "provider": "openai",
+      "reasoning_effort": "medium",
+      "reasoning_mapping": "--variant medium (+ provider model options reasoningEffort=medium where supported)",
+      "usage_support": "tokens+reasoning+cost via `opencode run --format json` step_finish events",
+      "status": "available via OpenAI provider authenticated through ChatGPT Plus"
+    }
+  ],
+  "reasoning": "medium",
+  "opencode_agent": "build",
+  "opencode_variant": "medium",
+  "timeout_s": 1800,
+  "prompt_wrapper_sha256": "2c24f38ee81c722f5fc542fea0eedeac7738b95fa9b30390102590d9b74f1ab7",
+  "config_hashes": {
+    "config/experiment.yaml": "b9cc09a7bbcc9adb211c25bb966e7656ddfa5528cda82a942e13e12f3cdc2df3",
+    "config/models.yaml": "3f3e9e8457600da6b81df5edcf5b07afb1648c0799737e03978bf826c481cb46",
+    "config/tasks.yaml": "b643444ff2b30ec96dbf0f867a86fff84b0bc0d99e1927a8d989d28d2969ca41",
+    "config/pricing.yaml": "b666383eac4f1c02124e1260181054d78e0bd03f99df069f2136eb49f55479f9"
+  },
+  "pricing_snapshot": {
+    "price_checked_at": "2026-09-23",
+    "price_source": "unknown: no comparable reference API pricing configured for both GPT-6 models",
+    "currency": "USD",
+    "reasoning_billing_notes": "If a provider bills reasoning tokens separately, record the rule here per model.",
+    "models": {
+      "sol": {
+        "display_name": "GPT-6 Sol",
+        "provider": "openai via ChatGPT Plus/OpenCode",
+        "input_per_1m": null,
+        "cached_input_per_1m": null,
+        "output_per_1m": null,
+        "reasoning_per_1m": null,
+        "source": "unknown; observed OpenCode actual cost is stored separately"
+      },
+      "luna": {
+        "display_name": "GPT-6 Luna",
+        "provider": "openai via ChatGPT Plus/OpenCode",
+        "input_per_1m": null,
+        "cached_input_per_1m": null,
+        "output_per_1m": null,
+        "reasoning_per_1m": null,
+        "source": "unknown; observed OpenCode actual cost is stored separately"
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Windows-10-10.0.19045-SP0"
+  },
+  "frozen_at": "2026-09-23T10:57:13.591051+00:00"
+}

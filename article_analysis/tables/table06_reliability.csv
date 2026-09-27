@@ -1,0 +1,10 @@
+metric,value,note
+physical_raw_records,136,120 planned + 16 append-only retries
+canonical_terminal_observations,120,one per task x model x repetition
+infrastructure_retries,16,13 provider-403 + 1 interrupted evaluator + 2 chained re-403; all with retry_of lineage
+terminal_provider_errors,0,
+terminal_timeouts,0,
+terminal_exit_nonzero,0,
+terminal_patch_application_failures,0,
+terminal_malformed_patches,0,
+model_empty_patch_no_verdict,6,Sol 3 / Luna 3; NOT retried per frozen policy

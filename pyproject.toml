@@ -1,0 +1,37 @@
+[project]
+name = "context-bench"
+version = "0.3.1"
+description = "GPT-6 Sol-vs-Luna experiment on SWE-bench Verified via a shared OpenCode harness"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "pyyaml>=6.0",
+  "click>=8.1",
+  "tiktoken>=0.7",
+  "pandas>=2.0",
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+  "datasets>=2.16",
+  "docker>=7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.3"]
+
+[project.scripts]
+context-bench = "context_bench.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["context_bench*", "analysis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100

@@ -1,0 +1,26 @@
+# Pricing is configuration, not code. Two SEPARATE cost metrics (§16-17):
+# - actual_cost_usd: provider/OpenCode-reported cost for the run (null when unreported)
+# - normalized_api_cost_usd: observed usage x public per-token price (null when unknown)
+# Never mix them. Unknown prices stay null (never invent).
+price_checked_at: "2026-09-23"
+price_source: "unknown: no comparable reference API pricing configured for both GPT-6 models"
+currency: "USD"
+reasoning_billing_notes: "If a provider bills reasoning tokens separately, record the rule here per model."
+
+models:
+  sol:
+    display_name: "GPT-6 Sol"
+    provider: "openai via ChatGPT Plus/OpenCode"
+    input_per_1m: null
+    cached_input_per_1m: null
+    output_per_1m: null
+    reasoning_per_1m: null
+    source: "unknown; observed OpenCode actual cost is stored separately"
+  luna:
+    display_name: "GPT-6 Luna"
+    provider: "openai via ChatGPT Plus/OpenCode"
+    input_per_1m: null
+    cached_input_per_1m: null
+    output_per_1m: null
+    reasoning_per_1m: null
+    source: "unknown; observed OpenCode actual cost is stored separately"

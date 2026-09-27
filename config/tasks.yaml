@@ -1,0 +1,64 @@
+# 30 main tasks: 6 repos x 5 (SWE-bench Verified instance_ids).
+# Selection rules + flask->sphinx substitution rationale: docs/TASK_SELECTION.md.
+# base_commit / image / version / difficulty resolved from the dataset at
+# validate time and cached in the active experiment namespace.
+# difficulty = official human fix-time bucket; issue_type = keyword HEURISTIC.
+tasks:
+  # django/django (reused: pre-validated, fixed before any model output existed)
+  - django__django-9296
+  - django__django-7530
+  - django__django-16631
+  - django__django-13212
+  - django__django-11138
+  # matplotlib/matplotlib (reused)
+  - matplotlib__matplotlib-13989
+  - matplotlib__matplotlib-25479
+  - matplotlib__matplotlib-22719
+  - matplotlib__matplotlib-25287
+  - matplotlib__matplotlib-24177
+  # scikit-learn/scikit-learn (reused)
+  - scikit-learn__scikit-learn-9288
+  - scikit-learn__scikit-learn-25102
+  - scikit-learn__scikit-learn-14141
+  - scikit-learn__scikit-learn-25973
+  - scikit-learn__scikit-learn-25232
+  # sympy/sympy (reused)
+  - sympy__sympy-13852
+  - sympy__sympy-16597
+  - sympy__sympy-12489
+  - sympy__sympy-14248
+  - sympy__sympy-13878
+  # pydata/xarray (new: difficulty-cycled picks)
+  - pydata__xarray-4075
+  - pydata__xarray-2905
+  - pydata__xarray-3993
+  - pydata__xarray-6992
+  - pydata__xarray-4094
+  # sphinx-doc/sphinx (new: difficulty-cycled picks; flask had only 1 Verified task)
+  - sphinx-doc__sphinx-10323
+  - sphinx-doc__sphinx-10466
+  - sphinx-doc__sphinx-11510
+  - sphinx-doc__sphinx-7590
+  - sphinx-doc__sphinx-10435
+
+# Reserve pool: >=3 per repo (18 total). Substitution ONLY pre-first-model-run,
+# same-repo only, reason recorded in docs/TASK_SELECTION.md. Never silent.
+reserve_tasks:
+  - django__django-15695
+  - django__django-10097
+  - django__django-10554
+  - matplotlib__matplotlib-14623
+  - matplotlib__matplotlib-20488
+  - matplotlib__matplotlib-20676
+  - scikit-learn__scikit-learn-13439
+  - scikit-learn__scikit-learn-10297
+  - scikit-learn__scikit-learn-10844
+  - sympy__sympy-11618
+  - sympy__sympy-12096
+  - sympy__sympy-12419
+  - pydata__xarray-3095
+  - pydata__xarray-4356
+  - pydata__xarray-3151
+  - sphinx-doc__sphinx-10614
+  - sphinx-doc__sphinx-8548
+  - sphinx-doc__sphinx-10449

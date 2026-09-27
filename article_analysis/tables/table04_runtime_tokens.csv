@@ -1,0 +1,13 @@
+model,variable,mean,median,q1,q3,total,n
+sol,runtime_s,158.6,133.1,103.7,176.5,9516,60
+luna,runtime_s,91.5,83.2,67.7,100.4,5491,60
+sol,input_tokens,33773,28690,21146,41144,2026393,60
+luna,input_tokens,24160,23410,17912,28946,1449592,60
+sol,output_tokens,2151,1893,1346,2696,129050,60
+luna,output_tokens,1325,1165,930,1441,79482,60
+sol,reasoning_tokens,840,628,,,50415,60
+luna,reasoning_tokens,223,174,,,13369,60
+sol,total_tokens,35924,30694,22632,42436,2155443,60
+luna,total_tokens,25485,24460,18839,30534,1529074,60
+sol,tool_calls,24.0,21.0,17.0,28.0,1441,60
+luna,tool_calls,14.1,13.0,11.75,15.25,847,60
